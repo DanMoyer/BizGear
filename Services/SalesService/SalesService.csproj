@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B60C956F-26B1-4FC4-A0FA-AA9B4101196F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SalesService</RootNamespace>
+    <AssemblyName>SalesService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\EventSources\EventSources.csproj">
+      <Project>{10d6b425-24f6-4a1b-b39f-8375d86c8622}</Project>
+      <Name>EventSources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Registration\Common.Registration.csproj">
+      <Project>{e097ba99-e307-4e93-b6d4-48ae12010f0f}</Project>
+      <Name>Common.Registration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data Access\SalesRepository\SalesDataAccess.csproj">
+      <Project>{105e9b77-7a9c-4946-b117-e0c543c9b328}</Project>
+      <Name>SalesDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data Transfer\MerchandiseReturnDTO\MerchandiseReturnDTO.csproj">
+      <Project>{2eb384e2-219a-4c0a-89e7-44c89030eb04}</Project>
+      <Name>MerchandiseReturnDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data Transfer\SalesDTO\SalesDTO.csproj">
+      <Project>{2fbaaacd-9a4f-4721-851c-eef4caf3293c}</Project>
+      <Name>SalesDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service Interfaces\Interfaces\Interfaces.csproj">
+      <Project>{c4c45111-ac66-4e37-9538-46521f07b151}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Behaviors\LoggingBehaviors\LoggingBehaviors.csproj">
+      <Project>{fafdcf01-6134-4a01-912b-b36f191b1dd0}</Project>
+      <Name>LoggingBehaviors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

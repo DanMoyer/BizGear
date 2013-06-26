@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2B68BC7-9F65-4655-832B-35069906304D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleHost</RootNamespace>
+    <AssemblyName>ConsoleHost</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContainerFactory.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\EventSources\EventSources.csproj">
+      <Project>{10d6b425-24f6-4a1b-b39f-8375d86c8622}</Project>
+      <Name>EventSources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Registration\Common.Registration.csproj">
+      <Project>{e097ba99-e307-4e93-b6d4-48ae12010f0f}</Project>
+      <Name>Common.Registration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Unity.Wcf\Unity.Wcf.csproj">
+      <Project>{46daad56-1db7-422f-80cb-67dc371a06fb}</Project>
+      <Name>Unity.Wcf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Data Access\DataAccess.Registration\DataAccess.Registration.csproj">
+      <Project>{b1417040-1b32-42b8-a610-06f49b8b7f59}</Project>
+      <Name>DataAccess.Registration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Service Interfaces\Interfaces\Interfaces.csproj">
+      <Project>{c4c45111-ac66-4e37-9538-46521f07b151}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Services\Behaviors\LoggingBehaviors\LoggingBehaviors.csproj">
+      <Project>{fafdcf01-6134-4a01-912b-b36f191b1dd0}</Project>
+      <Name>LoggingBehaviors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Services\MerchandiseReturnService\MerchandiseReturnService.csproj">
+      <Project>{cbf09d42-94b5-4fe0-82e6-fc5381cac2a7}</Project>
+      <Name>MerchandiseReturnService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Services\SalesService\SalesService.csproj">
+      <Project>{b60c956f-26b1-4fc4-a0fa-aa9b4101196f}</Project>
+      <Name>SalesService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Services\Services.Registration\Services.Registration.csproj">
+      <Project>{dcbca755-b17e-4115-8f5c-6fefece4090f}</Project>
+      <Name>Services.Registration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\System Services\System.Registration\SystemServices.Registration.csproj">
+      <Project>{0829c298-4fcb-4bcd-860b-4006e8311faa}</Project>
+      <Name>SystemServices.Registration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
