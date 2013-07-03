@@ -8,8 +8,6 @@ namespace EventSources.EventSources
 	{
 		public static readonly SalesContextEventSource Log = new SalesContextEventSource();
 
-		//public static SalesContextEventSource Log;
-
 		[Event(1, Level = EventLevel.Informational, Keywords = Keywords.Presentation)]
 		public void Presentation(string className, string methodName, string data){ if (IsEnabled()) WriteEvent(1, className, methodName, data); }
 

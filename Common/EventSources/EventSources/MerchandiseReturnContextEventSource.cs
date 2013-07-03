@@ -6,7 +6,7 @@ namespace EventSources.EventSources
 	[EventSource(Name = EventSourceNames.MerchandiseReturnContext)]
 	public class MerchandiseReturnContextEventSource : EventSource
 	{
-		public static MerchandiseReturnContextEventSource Log = new MerchandiseReturnContextEventSource();
+		public static readonly MerchandiseReturnContextEventSource Log = new MerchandiseReturnContextEventSource();
 
 		[Event(1, Level = EventLevel.Informational, Keywords = Keywords.Presentation)]
 		public void Presentation(string className, string methodName, string data) { if (IsEnabled()) WriteEvent(1, className, methodName, data); }

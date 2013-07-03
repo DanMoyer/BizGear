@@ -6,7 +6,7 @@ namespace EventSources.EventSources
 	[EventSource(Name = EventSourceNames.BusinessContext)]
 	public class BusinessContextEventSource : EventSource
 	{
-		public static BusinessContextEventSource Log = new BusinessContextEventSource();
+		public static readonly BusinessContextEventSource Log = new BusinessContextEventSource();
 
 		[Event(1, Level = EventLevel.Informational, Keywords = Keywords.Presentation)]
 		public void Presentation(string className, string methodName, string data) { if (IsEnabled()) WriteEvent(1, className, methodName, data); }
