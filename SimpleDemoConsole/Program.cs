@@ -39,7 +39,7 @@
 		private static void DisplayGuids()
 		{
 			var salesGuid             = SalesContextEventSource.Log.Guid.ToString();
-			var businessGuid          = BusinessContextEventSource.Log.Guid.ToString();
+			var businessGuid          = InventoryContextEventSource.Log.Guid.ToString();
 			var merchandiseReturnGuid = MerchandiseReturnContextEventSource.Log.Guid.ToString();
 
 			Console.WriteLine("Sales Guid\t\t{0}", salesGuid);
@@ -50,7 +50,7 @@
 		private static  void DisplayEnabled()
 		{
 			var isSalesEnabled       = SalesContextEventSource.Log.IsEnabled();
-			var isBusinessEnabled    = BusinessContextEventSource.Log.IsEnabled();
+			var isBusinessEnabled    = InventoryContextEventSource.Log.IsEnabled();
 			var isMerchandiseEnabled = MerchandiseReturnContextEventSource.Log.IsEnabled();
 
 			Console.WriteLine("Sales enabled \t\t{0} ", isSalesEnabled);
@@ -93,9 +93,9 @@
 
 		private static void TestBusinessLogging()
 		{
-			BusinessContextEventSource.Log.Presentation("Business_Presentation_className", "Business_presentation_MethodName", "Business presentation data");
-			BusinessContextEventSource.Log.Business("Business_Business_ClassName", "Business_business_MethodName", "Business business Data");
-			BusinessContextEventSource.Log.Data("Business_Data_ClassName", "Business_data access_MethodName", "Business data access data");
+			InventoryContextEventSource.Log.Presentation("Business_Presentation_className", "Business_presentation_MethodName", "Business presentation data");
+			InventoryContextEventSource.Log.Business("Business_Business_ClassName", "Business_business_MethodName", "Business business Data");
+			InventoryContextEventSource.Log.Data("Business_Data_ClassName", "Business_data access_MethodName", "Business data access data");
 		}
 
 		private static void TestMerchandiseLogging()

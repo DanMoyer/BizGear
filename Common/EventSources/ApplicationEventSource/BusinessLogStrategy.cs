@@ -26,22 +26,22 @@
 			switch (Layer)
 			{
 				case Layer.Presentation:
-					BusinessContextEventSource.Log.Presentation(ClassName, MethodName, data);
+					InventoryContextEventSource.Log.Presentation(ClassName, MethodName, data);
 					break;
 
 				case Layer.Business:
-					BusinessContextEventSource.Log.Business(ClassName, MethodName, data);
+					InventoryContextEventSource.Log.Business(ClassName, MethodName, data);
 					break;
 
 				case Layer.Data:
-					BusinessContextEventSource.Log.Data(ClassName, MethodName, data);
+					InventoryContextEventSource.Log.Data(ClassName, MethodName, data);
 					break;
 			}
 		}
 
 		private static bool IsEnabled()
 		{
-			return BusinessContextEventSource.Log.IsEnabled();
+			return InventoryContextEventSource.Log.IsEnabled();
 		}
 	}
 }

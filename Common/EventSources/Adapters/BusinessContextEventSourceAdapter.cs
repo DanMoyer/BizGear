@@ -4,11 +4,11 @@ namespace EventSources.Adapters
 {
 	public class BusinessContextEventSourceAdapter : IEtwLogger
 	{
-		private readonly BusinessContextEventSource _eventSource;
+		private readonly InventoryContextEventSource _eventSource;
 
 		public BusinessContextEventSourceAdapter()
 		{
-			_eventSource = BusinessContextEventSource.Log;
+			_eventSource = InventoryContextEventSource.Log;
 		}
 
 		public bool IsEnabled()
