@@ -3,10 +3,10 @@ namespace EventSources.EventSources
 	using System.Diagnostics.Tracing;
 
 	//guid for this provider:  {9a9cf874-7496-5df5-6e80-1c5804eccd57}
-	[EventSource(Name = EventSourceNames.BusinessContext)]
-	public class BusinessContextEventSource : EventSource
+	[EventSource(Name = EventSourceNames.InventoryContext)]
+	public class InventoryContextEventSource : EventSource
 	{
-		public static readonly BusinessContextEventSource Log = new BusinessContextEventSource();
+		public static readonly InventoryContextEventSource Log = new InventoryContextEventSource();
 
 		[Event(1, Level = EventLevel.Informational, Keywords = Keywords.Presentation)]
 		public void Presentation(string className, string methodName, string data) { if (IsEnabled()) WriteEvent(1, className, methodName, data); }

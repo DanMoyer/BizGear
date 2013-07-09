@@ -61,7 +61,7 @@
     <Compile Include="ApplicationEventSource\MerchandiseReturnLogStrategy.cs" />
     <Compile Include="ApplicationEventSource\SalesLogStrategy.cs" />
     <Compile Include="EventSourceNames.cs" />
-    <Compile Include="EventSources\BusinessContextEventSource.cs" />
+    <Compile Include="EventSources\InventoryContextEventSource.cs" />
     <Compile Include="EventSources\MerchandiseReturnContextEventSource.cs" />
     <Compile Include="EventSources\SalesContextEventSource.cs" />
     <Compile Include="IETWLogger.cs" />
