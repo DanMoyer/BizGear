@@ -22,5 +22,5 @@ namespace EventSources.ApplicationEventSource
 		public virtual void Log(string data)
 		{
 		}
-		}
+	}
 }

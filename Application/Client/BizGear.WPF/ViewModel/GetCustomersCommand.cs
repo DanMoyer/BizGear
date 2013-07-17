@@ -17,7 +17,6 @@
 
 		public void Execute(object parameter)
 		{
-
 			using (var appLog = ApplicationLogFactory.Create(Context.Sales,
 															Layer.Presentation,
 															"SalesViewModel",
